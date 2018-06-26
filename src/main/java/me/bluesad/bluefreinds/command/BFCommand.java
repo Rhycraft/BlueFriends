@@ -41,20 +41,20 @@ public class BFCommand implements CommandExecutor {
             }else if(args[0].equalsIgnoreCase("friend")){
                 if(size >= 2){
                     if(args[1].equalsIgnoreCase("accept")){
-                        if(Util.existsPlayer(args[2])){
-                            Individual another = new Individual(args[2]);
-                            if(sender.hasPermission(BF_FRIEND_ACCEPT)) {
-                                if (me.acceptFriendRequest(another)) {
-                                    p.sendMessage(Message.ACCEPT_FRIEND_TO.replaceAll("%player%", args[2]));
-                                    Administrator.sendMessage(args[2], Message.ACCEPT_FRIEND_FROM.replaceAll("%player%", sender.getName()));
-                                } else {
-                                    sender.sendMessage(WARN_ILLEGAL_COMMAND);
-                                }
+                        if(sender.hasPermission(BF_FRIEND_ACCEPT)) {
+                            if(Util.existsPlayer(args[2])){
+                                Individual another = new Individual(args[2]);
+                                    if (me.acceptFriendRequest(another)) {
+                                        p.sendMessage(Message.ACCEPT_FRIEND_TO.replaceAll("%player%", args[2]));
+                                        Administrator.sendMessage(args[2], Message.ACCEPT_FRIEND_FROM.replaceAll("%player%", sender.getName()));
+                                    } else {
+                                        sender.sendMessage(WARN_ILLEGAL_COMMAND);
+                                    }
                             }else{
-                                p.sendMessage(Lang.WARN_NO_PERMISSION.replaceAll("%permission%",BF_FRIEND_ACCEPT));
+                                sender.sendMessage(WARN_PLAYER_NOT_FOUND);
                             }
                         }else{
-                            sender.sendMessage(WARN_PLAYER_NOT_FOUND);
+                            p.sendMessage(Lang.WARN_NO_PERMISSION.replaceAll("%permission%",BF_FRIEND_ACCEPT));
                         }
                     }else if(args[1].equalsIgnoreCase("reject")){
                         if(sender.hasPermission(BF_FRIEND_REJECT)) {

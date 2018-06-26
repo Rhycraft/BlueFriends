@@ -13,7 +13,7 @@ permissions:
     children:
       bf.friend.*:
         default: true
-        childen:
+        children:
           bf.friend.accept: true
           bf.friend.reject: true
           bf.friend.delete: true

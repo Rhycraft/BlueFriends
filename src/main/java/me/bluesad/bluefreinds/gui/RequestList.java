@@ -4,6 +4,7 @@ import me.bluesad.bluefreinds.manager.Individual;
 import org.bluesad.tablet.component.TabletCollectionList;
 import org.bluesad.tablet.component.TabletGui;
 import org.bluesad.tablet.component.TabletSubGui;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.List;
@@ -14,8 +15,8 @@ public class RequestList extends TabletCollectionList<String> {
     }
 
     @Override
-    protected void onRequest(String s, TabletSubGui tabletSubGui) {
-        tabletSubGui.getAttributeMap().setExtraFunction(str->new Individual(s).replace(str));
+    protected void onRequest(String name, TabletSubGui tabletSubGui) {
+        tabletSubGui.setAngle(Bukkit.getOfflinePlayer(name));
     }
 
     @Override
