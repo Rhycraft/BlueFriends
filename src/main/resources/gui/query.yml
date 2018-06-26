@@ -3,6 +3,7 @@ y: -1
 w: 258
 h: 158
 url: '[local]gui#1.png'
+description: '查询玩家界面'
 
 components: 
   1:

@@ -3,6 +3,7 @@ y: -1
 w: 258
 h: 79
 url: '[local]gui#1.png'
+description: '个性签名编辑器界面'
 
 components:
   1:

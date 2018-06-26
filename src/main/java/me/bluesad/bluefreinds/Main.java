@@ -63,6 +63,7 @@ public final class Main extends JavaPlugin {
         saveResource("gui/editor_sex.yml",false);
         saveResource("gui/editor_signature.yml",false);
         saveResource("gui/maileditor_op.yml",false);
+        saveResource("lang/zh-CN.yml",false);
     }
 
     @Override
