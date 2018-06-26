@@ -33,7 +33,6 @@ op_help_message:
   - '&c/bf admin headborder [玩家] [头像边框地址] 为某玩家设置头像边框图片地址.',
   - '&c/bf admin reload 重载插件.',
   - '&c/bf sendmailg 群发邮件.'
-warn_prefix: '&6&l[BlueFriends]&c'
 warn_argument_number_wrong: '&6&l[BlueFriends]&c您输入的指令参数有误,请检查后重新输入.'
 warn_player_not_found: '&6&l[bluefriends]&c该玩家不存在!'
 warn_no_player_sender: '&6&l[bluefriends]&c该指令的发送者必须为玩家!'
