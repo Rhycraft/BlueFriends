@@ -17,6 +17,7 @@ public class Lang {
     public static String WARN_MAIL_NOT_FOUND = lang.getString("warn_mail_not_found","§6§l[BlueFriends]§c该邮件不存在!");
     public static String RELOAD_COMPLETED = lang.getString("reload_completed","§6[BlueFriends]§a插件重载完毕!");
     public static String MAIL_GROUP_SEND_COMPLETED = lang.getString("mail_group_send_completed","§6[BlueFriends]§a群发邮件成功!");
+    public static String WARN_NO_PERMISSION = lang.getString("warn_no_permission","§6[BlueFriends]§c你没有权限执行这个指令,需要:§e%permission%!");
 
     public static void reload(){
         lang = new YMLConfiguration(new File(Main.getInstance().getDataFolder(),"lang/"+Config.LANGUAGE+".yml"));
@@ -29,5 +30,6 @@ public class Lang {
         WARN_MAIL_NOT_FOUND = lang.getString("warn_mail_not_found","§6§l[BlueFriends]§c该邮件不存在!");
         RELOAD_COMPLETED = lang.getString("reload_completed","§6[BlueFriends]§a插件重载完毕!");
         MAIL_GROUP_SEND_COMPLETED = lang.getString("mail_group_send_completed","§6[BlueFriends]§a群发邮件成功!");
+        WARN_NO_PERMISSION = lang.getString("warn_no_permission","§6[BlueFriends]§c你没有权限执行这个指令!");
     }
 }

@@ -8,3 +8,50 @@ softdepend: [PlaceHolderAPI]
 commands:
   bf:
 permissions:
+  bf.*:
+    default: false
+    children:
+      bf.friend.*:
+        default: true
+        childen:
+          bf.friend.accept: true
+          bf.friend.reject: true
+          bf.friend.delete: true
+          bf.friend.request: true
+      bf.person.*:
+        default: true
+        children:
+          bf.person.signature: true
+          bf.person.url: true
+          bf.person.realname: true
+          bf.person.address: true
+          bf.person.sex: true
+          bf.person.birthday: true
+          bf.person.email: true
+          bf.person.qq: true
+          bf.person.editor_to: true
+          bf.person.editor_title: true
+          bf.person.editor_content: true
+          bf.person.editor_items: true
+      bf.mail.*:
+        default: true
+        children:
+          bf.mail.show: true
+          bf.mail.delete: true
+          bf.mail.send: true
+          bf.mail.getitems: true
+      bf.idcard.*:
+        default: true
+        children:
+          bf.idcard.showme: true
+          bf.idcard.show: true
+      bf.native.deletemsg:
+        default: true
+      bf.admin.*:
+        default: op
+        children:
+          bf.admin.headborder: true
+          bf.admin.reload: true
+          bf.admin.sendmailg: true
+      bf.open.*:
+        default: true
