@@ -44,6 +44,7 @@ public class Config{
     public static String SYSTEM_FORMAT = configuration.getString("system_format","§c系统");
     public static String READ_FORMAT = configuration.getString("read_format","§8已读");
     public static String UNREAD_FORMAT = configuration.getString("unread_format","§a未读");
+    public static String LANGUAGE = configuration.getString("language","zh_CN");
 
     /**
      * 重载配置文件
@@ -81,5 +82,6 @@ public class Config{
         SYSTEM_FORMAT = configuration.getString("system_format","§c系统");
         READ_FORMAT = configuration.getString("read_format","§8已读");
         UNREAD_FORMAT = configuration.getString("unread_format","§a未读");
+        LANGUAGE = configuration.getString("language","zh_CN");
     }
 }

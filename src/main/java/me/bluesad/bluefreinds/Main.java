@@ -1,8 +1,6 @@
 package me.bluesad.bluefreinds;
 
-import lk.vexview.function.PapiTools;
 import me.bluesad.bluefreinds.command.BFCommand;
-import me.bluesad.bluefreinds.command.BaseCommands;
 import me.bluesad.bluefreinds.database.DBManager;
 import me.bluesad.bluefreinds.gui.FriendList;
 import me.bluesad.bluefreinds.gui.MailList;
@@ -18,9 +16,7 @@ import org.bluesad.tablet.manager.TabletManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.sqlite.core.DB;
 
-import javax.security.auth.login.Configuration;
 import java.io.File;
 
 /**
@@ -76,6 +72,13 @@ public final class Main extends JavaPlugin {
         message = new YMLConfiguration(new File(getDataFolder(),"message.yml"));
         dbManager = new DBManager();
         manager = Tablet.getTabletManager();
+        log("┠ 正在检测语言文本...");
+        if(!new File(getDataFolder(),"lang/"+ Config.LANGUAGE+".yml").exists()){
+            log("┠ 无法检测到语言文本:"+Config.LANGUAGE+",即将替换为:zh_CN");
+            Config.LANGUAGE = "zh_CN";
+        }else{
+            log("┠ 使用语言文本:"+Config.LANGUAGE);
+        }
         log("┝ 正在注册PlaceHolderAPI变量...");
         PapiUtil.registerHook();
         Bukkit.getPluginCommand("bf").setExecutor(new BFCommand());
@@ -140,6 +143,7 @@ public final class Main extends JavaPlugin {
         message = new YMLConfiguration(new File(Main.getInstance().getDataFolder(),"message.yml"));
         Config.reload();
         Message.reload();
+        Lang.reload();
         dbManager = dbManager.reload();
     }
 }

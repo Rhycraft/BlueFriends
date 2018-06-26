@@ -18,56 +18,11 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import java.util.List;
 import java.util.UUID;
+import static me.bluesad.bluefreinds.manager.Lang.*;
 
 public class BFCommand implements CommandExecutor {
-    public static final String COMMAND_LABEL = "bf";
-    public static final String[] HELP_MESSAGE = new String[]{
-            "§b------------【BlueFriends指令帮助】------------",
-            "§6------------【好友指令】------------",
-            "§b/bf friend accept [玩家名] §e接受某人的好友请求.",
-            "§b/bf friend reject [玩家名] §e拒绝某人的好友请求.",
-            "§b/bf friend delete [玩家名] §e将某玩家移除出好友列表.",
-            "§b/bf friend request [玩家名] §e向某玩家发送好友请求.",
-            "§6------------【邮件指令】------------",
-            "§b/bf mail show [邮件UUID] §e查看一封邮件.",
-            "§b/bf mail delete [邮件UUID] §e删除一封邮件.",
-            "§b/bf mail send §e发送邮件编辑器中储存的邮件.",
-            "§b/bf mail getitems [邮件UUID] §e领取一封邮件的附件.",
-            "§6------------【个人指令】------------",
-            "§b/bf person signature [个性签名] §e设置自己的个性签名.",
-            "§b/bf person url [头像地址] §e设置自己的头像地址.",
-            "§b/bf person realname [个性签名] §e设置自己的真实姓名.",
-            "§b/bf person address [个性签名] §e设置自己的个人住址.",
-            "§b/bf person sex [个性签名] §e设置自己的性别.",
-            "§b/bf person birthday [个性签名] §e设置自己的生日.",
-            "§b/bf person email [个性签名] §e设置自己的邮件.",
-            "§b/bf person qq [个性签名] §e设置自己的QQ.",
-            "§b/bf person editor to [收件人] §e设置邮件编辑器的收件人属性.",
-            "§b/bf person editor title [标题] §e设置邮件编辑器的标题属性.",
-            "§b/bf person editor content [内容] §e设置邮件编辑器的邮件内容属性.",
-            "§b/bf person editor items §e设置邮件编辑器的附件属性.",
-            "§6------------【信息指令】------------",
-            "§b/bf idcard showme §e查看自己的个人信息.",
-            "§b/bf idcard show [玩家] §e设置某玩家的个人信息.",
-            "§6------------【其他指令】------------",
-            "§b/bf open [GUI界面] §e打开一个GUI界面."
-    };
-    public static final String[] OP_HELP_MESSAGE = new String[]{
-            "§8------------【管理员指令】------------",
-            "§c/bf admin headborder [玩家] [头像边框地址] 为某玩家设置头像边框图片地址.",
-            "§c/bf admin reload 重载插件.",
-            "§c/bf sendmailg 群发邮件."
-    };
-    public static final String WARN_PREFIX = "§6§l[BlueFriends]§c";
-    public static final String WARN_ARGUMENTS_NUMBER_WRONG = WARN_PREFIX+"您输入的指令参数有误,请检查后重新输入.";
-    public static final String WARN_PLAYER_NOT_FOUND = WARN_PREFIX+"该玩家不存在!";
-    public static final String WARN_NO_PLAYER_SENDER = WARN_PREFIX+"该指令的发送者必须为玩家!";
-    public static final String WARN_ILLEGAL_COMMAND = WARN_PREFIX+"您输入了一条非法指令,请重新输入!";
-    public static final String WARN_MAIL_NOT_FOUND = WARN_PREFIX+"该邮件不存在!";
-    public static final String RELOAD_COMPLETED = "§6[BlueFriends]§a插件重载完毕!";
-    public static final String MAIL_RECEIVED_CONDITION_REGEX = "(%).*(%)(>|=|<)[0-9]*";
-    public static final String MAIL_GROUP_SEND_COMPLETED = "§6[BlueFriends]§a群发邮件成功!";
-    public static final String WARN_ILLEGAL_IMAGE_URL = Message.ILLEGAL_IMAGE_URL;
+    private static final String COMMAND_LABEL = "bf";
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -209,7 +164,7 @@ public class BFCommand implements CommandExecutor {
                             me.setHeadUrl(args[2]);
                             p.sendMessage(Message.SET_URL.replaceAll("%value%", args[2]));
                         }else{
-                            sender.sendMessage(WARN_ILLEGAL_IMAGE_URL.replaceAll("%url%",args[2]));
+                            sender.sendMessage(Message.ILLEGAL_IMAGE_URL.replaceAll("%url%",args[2]));
                         }
                     } else if (args[1].equals("realname")) {
                         me.setRealName(args[2]);
@@ -306,7 +261,7 @@ public class BFCommand implements CommandExecutor {
                                         another.setHeadBorderUrl(args[3]);
                                         p.sendMessage(Message.SET_HEADBORDER.replaceAll("%value%", args[2]).replaceAll("%player%", args[2]));
                                     }else{
-                                        sender.sendMessage(WARN_ILLEGAL_IMAGE_URL.replaceAll("%url%",args[3]));
+                                        sender.sendMessage(Message.ILLEGAL_IMAGE_URL.replaceAll("%url%",args[3]));
                                     }
                                 } else {
                                     sender.sendMessage(WARN_PLAYER_NOT_FOUND);
