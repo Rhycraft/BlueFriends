@@ -1,0 +1,75 @@
+x: 0
+y: 0
+w: 500
+h: 250
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'image'
+    url: '[local]img#7.png'
+    x: 0
+    y: 10
+    w: 250
+    h: 230
+  2:
+    type: 'image'
+    url: '[local]img#13.png'
+    x: 222
+    y: 100
+    w: 170
+    h: 30
+  3:
+    type: 'image'
+    url: '[local]img#14.png'
+    x: 322
+    y: 100
+    w: 170
+    h: 30
+  4:
+    type: 'image'
+    url: '[local]img#12.png'
+    x: 122
+    y: 100
+    w: 170
+    h: 30
+  5:
+    type: 'image'
+    url: '[local]img#15.png'
+    x: 150
+    y: 30
+    w: 215
+    h: 65
+  6:
+    type: 'button'
+    name: ''
+    url1: '[local]button#1.png'
+    url2: '[local]button#4.png'
+    x: 125
+    y: 140
+    w: 64
+    h: 64
+    commands:
+      - 'tablet open query.yml'
+  7:
+    type: 'button'
+    name: ''
+    url1: '[local]button#2.png'
+    url2: '[local]button#5.png'
+    x: 225
+    y: 140
+    w: 64
+    h: 64
+    commands:
+      - 'tablet open friendlist.yml'
+  8:
+    type: 'button'
+    name: ''
+    url1: '[local]button#3.png'
+    url2: '[local]button#6.png'
+    x: 325
+    y: 140
+    w: 64
+    h: 64
+    commands:
+      - 'bf idcard showme'

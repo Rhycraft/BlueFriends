@@ -1,0 +1,152 @@
+x: -1
+y: -1
+w: 258
+h: 158
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'image'
+    url: '%bf_head_url%'
+    x: 20
+    y: 40
+    w: 64
+    h: 64
+  2:
+    type: 'button'
+    name: '修改头像'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 17
+    y: 108
+    w: 70
+    h: 10
+    commands:
+      - 'tablet open editor_head_url.yml'
+#头像边框
+  3:
+    type: 'image'
+    url: '%bf_headborder_url%'
+    x: 17
+    y: 37
+    w: 70
+    h: 70
+  4:
+    type: 'image'
+    url: '[local]img#5.png'
+    x: 79
+    y: 10
+    w: 100
+    h: 25
+  5:
+    type: 'button'
+    name: '退出编辑'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 80
+    y: 140
+    w: 100
+    h: 16
+    commands:
+      - 'tablet open idcard_me.yml'
+  6:
+    type: 'text'
+    x: 90
+    y: 40
+    contents:
+      - '玩家:%bf_name%'
+      - '真实姓名:%bf_realname%'
+      - ''
+      - '住址:%bf_address%'
+      - ''
+      - 'QQ:%bf_qq%'
+      - ''
+      - '个性签名:'
+      - '<substring length=12 suffix=...>%bf_signature%</substring>'
+  7:
+    type: 'text'
+    x: 150
+    y: 40
+    contents:
+      - '性别:%bf_sex%'
+      - ''
+      - '生日:%bf_birthday%'
+      - ''
+      - '电子邮箱:%bf_email%'
+  8:
+    type: 'button'
+    name: '修改真实姓名'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 90
+    y: 60
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_realname.yml'
+  9:
+    type: 'button'
+    name: '修改住址'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 90
+    y: 80
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_address.yml'
+  10:
+    type: 'button'
+    name: '修改QQ'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 90
+    y: 100
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_qq.yml'
+  11:
+    type: 'button'
+    name: '修改个性签名'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 90
+    y: 130
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_signature.yml'
+  12:
+    type: 'button'
+    name: '修改性别'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 150
+    y: 50
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_sex.yml'
+  13:
+    type: 'button'
+    name: '修改生日'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 150
+    y: 70
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_birthday.yml'
+  14:
+    type: 'button'
+    name: '修改电子邮箱'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 150
+    y: 90
+    w: 58
+    h: 10
+    commands:
+      - 'tablet open editor_email.yml'

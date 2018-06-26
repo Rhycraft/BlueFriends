@@ -1,0 +1,73 @@
+x: -1
+y: -1
+w: 240
+h: 158
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'image'
+    url: '[local]img#19.png'
+    x: 10
+    y: 30
+    w: 150
+    h: 120
+  2:
+    type: 'button'
+    name: '群发邮件'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 165
+    y: 137
+    w: 68
+    h: 16
+    commands:
+      - 'bf admin sendmailg %bf_maileditor_to%'
+      - 'tablet closegui'
+  3:
+    type: 'button'
+    name: '添加附件'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 165
+    y: 117
+    w: 68
+    h: 16
+    commands:
+      - 'bf person editor items '
+  4:
+    type: 'button'
+    name: '设置邮件主题'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 165
+    y: 97
+    w: 68
+    h: 16
+    commands:
+      - 'tablet open editor_title_op.yml'
+  5:
+    type: 'button'
+    name: '设置邮件内容'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 165
+    y: 77
+    w: 68
+    h: 16
+    commands:
+      - 'tablet open editor_content_op.yml'
+  6:
+    type: 'text'
+    x: 5
+    y: 5
+    contents:
+      - '&e主题:&a%bf_maileditor_title%'
+      - '&e收件人:&a全体玩家'
+  7:
+    type: 'text'
+    x: 14
+    y: 32
+    contents:
+      - '<p size=32 color=&a><substring length=110 suffix=...>  %bf_maileditor_content%</substring></p>'
+  

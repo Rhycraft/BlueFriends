@@ -1,0 +1,59 @@
+x: -1
+y: -1
+w: 258
+h: 158
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'image'
+    url: '%bf_head_url%'
+    x: 20
+    y: 40
+    w: 64
+    h: 64
+#头像边框
+  2:
+    type: 'image'
+    url: '%bf_headborder_url%'
+    x: 17
+    y: 37
+    w: 70
+    h: 70
+  3:
+    type: 'image'
+    url: '[local]img#5.png'
+    x: 79
+    y: 10
+    w: 100
+    h: 25
+  4:
+    type: 'button'
+    name: '编辑资料'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 80
+    y: 140
+    w: 100
+    h: 16
+    commands:
+      - 'tablet open idcardeditor.yml'
+  5:
+    type: 'text'
+    x: 90
+    y: 40
+    contents:
+      - '玩家:%bf_name%'
+      - '真实姓名:%bf_realname%'
+      - '住址:%bf_address%'
+      - 'QQ:%bf_qq%'
+      - '个性签名:'
+      - '<substring length=12 suffix=...>%bf_signature%</substring>'
+  6:
+    type: 'text'
+    x: 150
+    y: 40
+    contents:
+      - '性别:%bf_sex%'
+      - '生日:%bf_birthday%'
+      - '电子邮箱:%bf_email%'

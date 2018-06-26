@@ -1,0 +1,27 @@
+x: -1
+y: -1
+w: 258
+h: 158
+url: '[local]gui#1.png'
+
+components: 
+  1:
+    type: 'textfield'
+    x: 20
+    y: 20
+    w: 150
+    h: 20
+    maxstring: 20
+    commands:
+      - 'bf idcard show %text%'
+  2:
+    type: 'button'
+    name: '查询'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 175
+    y: 20
+    w: 68
+    h: 16
+    commands:
+      - 'tablet native calltextfield'

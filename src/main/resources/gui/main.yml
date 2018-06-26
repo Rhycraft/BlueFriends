@@ -1,0 +1,56 @@
+x: 0
+y: 0
+w: 500
+h: 250
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'image'
+    url: '[local]img#1.png'
+    x: 20
+    y: 20
+    w: 250
+    h: 50
+  2:
+    type: 'image'
+    url: '[local]img#8.png'
+    x: 250
+    y: 20
+    w: 180
+    h: 360 
+  3:
+    type: 'button'
+    id: -10000
+    name: ''
+    url1: '[local]button#14.png'
+    url2: '[local]button#14_.png'
+    x: 50
+    y: 80
+    w: 180
+    h: 35
+    commands:
+      - 'tablet open friendsystem.yml'
+  4:
+    type: 'button'
+    id: -10001
+    name: ''
+    url1: '[local]button#15.png'
+    url2: '[local]button#15_.png'
+    x: 50
+    y: 120
+    w: 180
+    h: 35
+    commands:
+      - 'tablet open mailsystem.yml'
+  5:
+    type: 'button'
+    name: ''
+    url1: '[local]button#16.png'
+    url2: '[local]button#16_.png'
+    x: 50
+    y: 160
+    w: 180
+    h: 35
+    commands:
+      - 'tablet open messagelist.yml'

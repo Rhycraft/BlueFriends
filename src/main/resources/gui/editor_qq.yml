@@ -1,0 +1,45 @@
+x: -1
+y: -1
+w: 258
+h: 79
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'button'
+    name: '确定'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 47
+    y: 60
+    w: 68
+    h: 16
+    commands:
+      - 'tablet native calltextfield'
+  2:
+    type: 'textfield'
+    id: 6
+    x: 50
+    y: 20
+    w: 155
+    h: 20
+    maxstring: 50
+    commands:
+      - 'bf person qq %text%'
+  3:
+    type: 'button'
+    name: '返回'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 140
+    y: 60
+    w: 68
+    h: 16
+    commands:
+      - 'tablet open idcardeditor.yml'
+  4:
+    type: 'text'
+    x: 50
+    y: 10
+    contents:
+      - '&a请输入新的QQ账号'

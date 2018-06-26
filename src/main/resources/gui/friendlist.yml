@@ -1,0 +1,93 @@
+x: 0
+y: 0
+w: 500
+h: 250
+url: '[local]gui#1.png'
+  
+components:
+  1:
+    type: 'image'
+    url: '[local]img#16.png'
+    x: 260
+    y: 10
+    w: 160
+    h: 50
+  2:
+    type: 'image'
+    url: '[local]img#2.png'
+    x: 250
+    y: 70
+    w: 170
+    h: 170
+  3: 
+    type: 'friend_list'
+    x: 10
+    y: 10
+    size: 5
+    margin: 0
+    nextpage_button:
+      name: ''
+      url1: '[local]button#12.png'
+      url2: '[local]button#12_.png'
+      x: 170
+      y: 215
+      w: 40
+      h: 20
+    previouspage_button:
+      name: ''
+      url1: '[local]button#11.png'
+      url2: '[local]button#11_.png'
+      x: 10
+      y: 215
+      w: 40
+      h: 20
+    entry:
+      x: 0
+      y: 0
+      w: 200
+      h: 40
+      url: '[local]button#13.png'
+      components:
+        1:
+          type: 'image'
+          url: '%bf_head_url%'
+          x: 15
+          y: 2
+          w: 35
+          h: 35
+        2:
+          type: 'image'
+          url: '%bf_headborder_url%'
+          x: 13
+          y: 0
+          w: 37
+          h: 37
+        3:
+          type: 'text'
+          x: 55
+          y: 8
+          contents:
+            - '%bf_online%  %bf_name%'
+            - '%bf_signature%'
+        4:
+          type: 'button'
+          name: '请求传送'
+          url1: '[local]button.png'
+          url2: '[local]button_.png'
+          x: 210
+          y: 2
+          w: 40
+          h: 18
+          commands:
+            - 'tpa %bf_name%'
+        5:
+          type: 'button'
+          name: '查看资料'
+          url1: '[local]button.png'
+          url2: '[local]button_.png'
+          x: 210
+          y: 20
+          w: 40
+          h: 18
+          commands:
+            - 'bf idcard show %bf_name%'

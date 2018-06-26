@@ -1,0 +1,94 @@
+x: 0
+y: 0
+w: 500
+h: 250
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'image'
+    url: '[local]img#21.png'
+    x: 250
+    y: 10
+    w: 160
+    h: 50
+  2:
+    type: 'image'
+    url: '[local]img#25.png'
+    x: 250
+    y: 60
+    w: 160
+    h: 180
+  3:
+    type: 'mail_list'
+    x: 10
+    y: 10
+    size: 5
+    margin: 0
+    nextpage_button:
+      name: ''
+      url1: '[local]button#12.png'
+      url2: '[local]button#12_.png'
+      x: 170
+      y: 215
+      w: 40
+      h: 20
+    previouspage_button:
+      name: ''
+      url1: '[local]button#11.png'
+      url2: '[local]button#11_.png'
+      x: 10
+      y: 215
+      w: 40
+      h: 20
+    entry:
+      x: 0
+      y: 0
+      w: 200
+      h: 40
+      url: '[local]button#13.png' 
+      components:
+        1:
+          type: 'button'
+          name: '查看邮件'
+          url1: '[local]button.png'
+          url2: '[local]button_.png'
+          x: 210
+          y: 2
+          w: 40
+          h: 18
+          commands:
+            - 'bf mail show %uuid%'
+        2:
+          type: 'button'
+          name: '删除邮件'
+          url1: '[local]button.png'
+          url2: '[local]button_.png'
+          x: 210
+          y: 20
+          w: 40
+          h: 18
+          commands:
+            - 'bf mail delete %uuid%'
+            - 'tablet open maillist.yml'
+        3:
+          type: 'text'
+          x: 55
+          y: 8
+          contents:
+            - '%title%'
+            - '&a来自:&e%from%'
+        4:
+          type: 'image'
+          url: '[local]img#20.jpg'
+          x: 15
+          y: 2
+          w: 35
+          h: 35
+        5:
+          type: 'image'
+          url: '[local]img#3.png'
+          x: 15
+          y: 2
+          w: 35
+          h: 35

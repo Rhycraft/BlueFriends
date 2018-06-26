@@ -1,0 +1,81 @@
+x: 0
+y: 0
+w: 500
+h: 256
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'request_list'
+    x: 10
+    y: 10
+    size: 5
+    margin: 0
+    nextpage_button:
+      name: ''
+      url1: '[local]button#12.png'
+      url2: '[local]button#12_.png'
+      x: 170
+      y: 215
+      w: 40
+      h: 20
+    previouspage_button:
+      name: ''
+      url1: '[local]button#11.png'
+      url2: '[local]button#11_.png'
+      x: 10
+      y: 215
+      w: 40
+      h: 20
+    entry:
+      x: 0
+      y: 0
+      w: 200
+      h: 40
+      url: '[local]button#13.png'
+      components:
+        1:
+          type: 'image'
+          url: '[local]img#23.jpg'
+          x: 15
+          y: 2
+          w: 35
+          h: 35
+        2:
+          type: 'text'
+          x: 55
+          y: 8
+          contents:
+            - '&a好友请求:'
+            - '&a玩家&e%bf_name%&a请求添加你为好友.'
+        3:
+          type: 'image'
+          url: '[local]img#3.png'
+          x: 15
+          y: 2
+          w: 35
+          h: 35
+        4:
+          type: 'button'
+          name: '接受'
+          url1: '[local]button.png'
+          url2: '[local]button_.png'
+          x: 210
+          y: 2
+          w: 40
+          h: 18
+          commands:
+            - 'bf friend accept %bf_name%'
+            - 'tablet open requestlist.yml'
+        5:
+          type: 'button'
+          name: '拒绝'
+          url1: '[local]button.png'
+          url2: '[local]button_.png'
+          x: 210
+          y: 22
+          w: 40
+          h: 18
+          commands:
+            - 'bf friend reject %bf_name%'
+            - 'tablet open requestlist.yml'

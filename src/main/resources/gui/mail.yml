@@ -1,0 +1,48 @@
+x: -1
+y: -1
+w: 240
+h: 158
+url: '[local]gui#1.png'
+
+components:
+  1:
+    type: 'button'
+    name: '确定'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 40
+    y: 140
+    w: 68
+    h: 16
+    commands:
+      - 'tablet native closegui'
+  2:
+    type: 'button'
+    name: '领取附件'
+    url1: '[local]button.png'
+    url2: '[local]button_.png'
+    x: 132
+    y: 140
+    w: 68
+    h: 16
+    commands:
+      - 'bf mail getitems %uuid%'
+  3:
+    type: 'text'
+    x: 5
+    y: 5
+    #邮件展示的格式
+    #%from% 邮件发送人
+    #%to% 邮件接收人
+    #%title% 邮件主题
+    #%date% 邮件发送的时间
+    #%content% 邮件内容
+    contents:
+      - '&a主题: %title%'
+      - '----------------------------------------------------------'
+      - '&a发件人: &e%from%'
+      - '&a收件人: &e%to%'
+      - '&a时间: &e%date%'
+      - '&a内容:'
+      - '<p size=50 color=&e>%content%</p>'
+
