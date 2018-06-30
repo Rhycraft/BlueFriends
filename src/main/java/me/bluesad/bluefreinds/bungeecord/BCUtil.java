@@ -3,10 +3,10 @@ package me.bluesad.bluefreinds.bungeecord;
 import me.bluesad.bluefreinds.manager.BungeeCord;
 
 public class BCUtil {
-    public boolean isBungeeCord(){
+    public static boolean isBungeeCord(){
         return BungeeCord.BUNGEE_CORD;
     }
-    public String getServerName(){
+    public static String getServerName(){
         return BungeeCord.SERVER_NAME;
     }
 }

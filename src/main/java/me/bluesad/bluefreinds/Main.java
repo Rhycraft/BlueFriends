@@ -1,5 +1,7 @@
 package me.bluesad.bluefreinds;
 
+import me.bluesad.bluefreinds.bungeecord.BCUtil;
+import me.bluesad.bluefreinds.bungeecord.MessageListener;
 import me.bluesad.bluefreinds.command.BFCommand;
 import me.bluesad.bluefreinds.database.DBManager;
 import me.bluesad.bluefreinds.gui.FriendList;
@@ -81,6 +83,12 @@ public final class Main extends JavaPlugin {
             Config.LANGUAGE = "zh_CN";
         }else{
             log("┠ 使用语言文本:"+Config.LANGUAGE);
+        }
+        if(BCUtil.isBungeeCord()){
+            log("┝ 检测到为BungeeCord服务器");
+            log("┝ 正在注册插件通信频道...");
+            this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+            this.getServer().getMessenger().registerIncomingPluginChannel(this, "BungeeCord", new MessageListener());
         }
         log("┝ 正在注册PlaceHolderAPI变量...");
         PapiUtil.registerHook();
