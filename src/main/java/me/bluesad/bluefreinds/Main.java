@@ -27,6 +27,7 @@ public final class Main extends JavaPlugin {
     private static Main instance;
     static YMLConfiguration config;
     static YMLConfiguration message;
+    static YMLConfiguration bungeecord;
     static DBManager dbManager;
     static TabletManager manager;
 
@@ -71,6 +72,7 @@ public final class Main extends JavaPlugin {
         log("┍ BlueFriends正在加载...");
         config = new YMLConfiguration(new File(getDataFolder(),"config.yml"));
         message = new YMLConfiguration(new File(getDataFolder(),"message.yml"));
+        bungeecord = new YMLConfiguration(new File(getDataFolder(),"bungeecord.yml"));
         dbManager = new DBManager();
         manager = Tablet.getTabletManager();
         log("┠ 正在检测语言文本...");

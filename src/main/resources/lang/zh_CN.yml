@@ -41,3 +41,70 @@ warn_mail_not_found: '&6&l[bluefriends]&c该邮件不存在!'
 reload_completed: '&6[bluefriends]&a插件重载完毕!'
 mail_group_send_completed: '&6[bluefriends]&a群发邮件成功!'
 warn_no_permission: '&6[BlueFriends]&c你没有权限执行这个指令,需要:&e%permission%!'
+#玩家加入服务器时发送的提示信息
+#%c% 未处理的消息的数量
+#该条消息发送HUB
+on_join: '&6[BlueFriends]&a你还有&e%c%&a条消息没有处理.'
+#删除邮件时向玩家发送的信息
+#%uuid% 邮件的uuid
+#%title% 邮件的主题
+#%to% 邮件的接收人
+#%from% 邮件的发送人
+delete_mail: '&6[BlueFriends]&c你已成功删除邮件(&e%uuid%&a).'
+#将邮件设置为已读是向玩家发送的信息
+#同上
+setread_mail: '&6[BlueFriends]&a你已将邮件(&e%uuid%&a)标记为已读.'
+#玩家领取所有附件时发送的信息
+#同上
+receiveitems_mail: '&6[BlueFriends]&a你成功领取了邮件(&e%uuid%&a)的附件.'
+fail_receiveitems_mail: '&6[BlueFriends]&a该邮件(&e%uuid%&a)没有附件.'
+#玩家向其他玩家发送邮件时发送的信息
+#%to% 邮件的接收人
+send_mail: '&6[BlueFriends]&a你给&e%to%&a玩家发送了一封邮件.'
+#玩家在线时接收到邮件时发送的信息
+#同上上
+#该条消息发送HUB
+receive_mail: '&6[BlueFriends]&a玩家&e%from%&a给你发送了一封邮件.'
+#玩家在线时接收到邮件时发送的信息
+#同上
+receive_system_mail: '&6[BlueFriends]&a你收到了一封系统邮件.'
+#玩家被请求添加好友时发送的信息
+#%from% 好友请求的发送人
+#该条消息发送HUB
+friend_requested: '&a玩家%player%请求添加你为好友.'
+#玩家发送好友请求时发送的信息
+#%player%
+friend_request: '&6[BlueFriends]&a你已将好友请求发送至&e%player%.'
+#玩家接受好友请求时发送的信息
+accept_friend_to: '&6[BlueFriends]&a你已经与玩家&e%player%成为好友.'
+#玩家接受好友请求时向该请求发送人发送的信息
+accept_friend_from: '&6[BlueFriends]&a玩家&e%player%已经与你成为好友.'
+#玩家拒绝好友请求时发送的信息
+reject_friend_to: '&6[BlueFriends]&a你拒绝了玩家&e%player%的好友请求.'
+#玩家拒绝好友请求时向该请求发送人发送的信息
+reject_friend_from: '&6[BlueFriends]&a玩家&e%player%拒绝与你成为好友.'
+#重复添加好友时发送的警告信息
+repeat_friend_request: '&6[BlueFriends]&c玩家&e%player%&c与你已经是好友了,请不要重复添加.'
+#玩家删除一名好友时发送的信息
+delete_friend: '&6[BlueFriends]&a你已将玩家&e%player%&a移出好友列表.'
+
+#玩家编辑个人信息时发送的信息
+#%value% 修改的值
+set_realname: '&6[BlueFriends]&a你已将真实姓名修改为&e%value%.'
+set_birthday: '&6[BlueFriends]&a你已将生日修改为&e%value%.'
+set_address: '&6[BlueFriends]&a你已将地址修改为&e%value%.'
+set_qq: '&6[BlueFriends]&a你已将QQ修改为&e%value%.'
+set_email: '&6[BlueFriends]&a你已将电子邮箱修改为&e%value%.'
+set_signature: '&6[BlueFriends]&a你已将个性签名修改为&e%value%.'
+set_sex: '&6[BlueFriends]&a你已将性别修改为&e%value%.'
+set_url: '&6[BlueFriends]&a你已将头像修改为&e%value%.'
+set_editor_to: '&6[BlueFriends]&a你已将邮件编辑器的收件人属性修改为&e%value%.'
+set_editor_title: '&6[BlueFriends]&a你已将邮件编辑器的标题属性修改为&e%value%.'
+set_editor_content: '&6[BlueFriends]&a你已将邮件编辑器的内容属性修改为&e%value%.'
+set_editor_items: '&6[BlueFriends]&a你已成功修改邮件编辑器的附件属性.'
+set_headborder: '&6[BlueFriends]&a你已成功修改玩家&e%player%&a的头像边框为&e%value%.'
+#玩家加入游戏时向所有好友发送的信息
+join_msg: '&6[BlueFriends]&a你的好友&e%player%&a已上线.'
+unexists_gui: '&6[BlueFriends]&c该界面不存在.'
+#变量%url%
+illegal_image_url: '&6[BlueFriends]&c你输入了一个非法的图片地址&c(%url%)&c,请检查你的输入!'

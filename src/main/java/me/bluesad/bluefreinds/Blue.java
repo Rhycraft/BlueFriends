@@ -23,6 +23,9 @@ public class Blue {
     public static YMLConfiguration getMessage(){
         return Main.message;
     }
+    public static YMLConfiguration getBungeeCord(){
+        return Main.bungeecord;
+    }
     public static DBManager getDBManager(){
         return Main.dbManager;
     }

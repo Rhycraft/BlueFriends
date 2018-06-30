@@ -1,0 +1,55 @@
+help_message:
+  - '&b------------【BlueFriends Commands Help】------------'
+  - '&6------------【Friends Commands】------------'
+  - '&b/bf friend accept [player] &eAccept one`s friend request'
+  - '&b/bf friend reject [player] &eReject one`s friend request.'
+  - '&b/bf friend delete [player] &eDelete friend.'
+  - '&b/bf friend request [player] &e向某玩家发送好友请求.'
+  - '&6------------【Mail Command】------------'
+  - '&b/bf mail show [UUID] &e查看一封邮件.'
+  - '&b/bf mail delete [UUID] &e删除一封邮件.'
+  - '&b/bf mail send &e发送邮件编辑器中储存的邮件.'
+  - '&b/bf mail getitems [UUID] &e领取一封邮件的附件.'
+  - '&6------------【Personal Command】------------'
+  - '&b/bf person signature [signature] &e设置自己的个性签名.'
+  - '&b/bf person url [the url of head image] &e设置自己的头像地址.'
+  - '&b/bf person realname [real name] &e设置自己的真实姓名.'
+  - '&b/bf person address [address] &e设置自己的个人住址.'
+  - '&b/bf person sex [sex] &e设置自己的性别.'
+  - '&b/bf person birthday [birthday] &e设置自己的生日.'
+  - '&b/bf person email [email] &e设置自己的邮件.'
+  - '&b/bf person facebook [facebook] &e设置自己的QQ.'
+  - '&b/bf person editor to [to] &e设置邮件编辑器的收件人属性.'
+  - '&b/bf person editor subject [subject] &e设置邮件编辑器的标题属性.'
+  - '&b/bf person editor content [content] &e设置邮件编辑器的邮件内容属性.'
+  - '&b/bf person editor items &e设置邮件编辑器的附件属性.'
+  - '&6------------【信息指令】------------'
+  - '&b/bf idcard showme &e查看自己的个人信息.'
+  - '&b/bf idcard show [player] &e设置某玩家的个人信息.'
+  - '&6------------【其他指令】------------'
+  - '&b/bf open [GUI] &e打开一个GUI界面.'
+op_help_message:
+  - '&8------------【管理员指令】------------'
+  - '&c/bf admin headborder [player] [the url of head border image] 为某玩家设置头像边框图片地址.'
+  - '&c/bf admin reload &ereload the plugin.'
+  - '&c/bf sendmailg &e群发邮件.'
+warn_argument_number_wrong: '&6&l[BlueFriends]&c您输入的指令参数有误,请检查后重新输入.'
+warn_player_not_found: '&6&l[bluefriends]&c该玩家不存在!'
+warn_no_player_sender: '&6&l[bluefriends]&c该指令的发送者必须为玩家!'
+warn_illegal_command: '&6&l[bluefriends]&c您输入了一条非法指令,请重新输入!'
+warn_mail_not_found: '&6&l[bluefriends]&c该邮件不存在!'
+reload_completed: '&6[bluefriends]&a插件重载完毕!'
+mail_group_send_completed: '&6[bluefriends]&a群发邮件成功!'
+warn_no_permission: '&6[BlueFriends]&c你没有权限执行这个指令,需要:&e%permission%!'
+#玩家加入服务器时发送的提示信息
+#%c% 未处理的消息的数量
+#该条消息发送HUB
+on_join: '&6[BlueFriends]&a你还有&e%c%&a条消息没有处理.'
+#删除邮件时向玩家发送的信息
+#%uuid% 邮件的uuid
+#%title% 邮件的主题
+#%to% 邮件的接收人
+#%from% 邮件的发送人
+delete_mail: '&6[BlueFriends]&c你已成功删除邮件(&e%uuid%&a).'
+#将邮件设置为已读是向玩家发送的信息
+#同上

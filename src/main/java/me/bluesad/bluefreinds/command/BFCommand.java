@@ -240,7 +240,7 @@ public class BFCommand implements CommandExecutor {
                         }else{
                             p.sendMessage(Lang.WARN_NO_PERMISSION.replaceAll("%permission%",BF_PERSON_EMAIL));
                         }
-                    } else if (args[1].equals("qq")) {
+                    } else if (args[1].equals("qq") || args[1].equals("facebook")) {
                         if(sender.hasPermission(BF_PERSON_QQ)) {
                             me.setQq(args[2]);
                             p.sendMessage(Message.SET_QQ.replaceAll("%value%", args[2]));
@@ -259,7 +259,7 @@ public class BFCommand implements CommandExecutor {
                             }else{
                                 p.sendMessage(Lang.WARN_NO_PERMISSION.replaceAll("%permission%",BF_PERSON_EDITOR_TO));
                             }
-                        } else if (args[2].equals("title")) {
+                        } else if (args[2].equals("title") || args[2].equals("subject")) {
                             if(sender.hasPermission(BF_PERSON_EDITOR_TITLE)) {
                                 if (size >= 4) {
                                     me.getMailEditor().setTitle(args[3]);
