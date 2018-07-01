@@ -3,6 +3,7 @@ package me.bluesad.bluefreinds.listener;
 import com.mysql.fabric.xmlrpc.base.Array;
 import me.bluesad.bluefreinds.Blue;
 import me.bluesad.bluefreinds.Main;
+import me.bluesad.bluefreinds.bungeecord.BCUtil;
 import me.bluesad.bluefreinds.manager.Config;
 import me.bluesad.bluefreinds.manager.Individual;
 import me.bluesad.bluefreinds.manager.Message;
@@ -14,6 +15,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.scheduler.BukkitRunnable;
 import java.util.ArrayList;
@@ -26,6 +28,9 @@ public class PlayerListener implements Listener{
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         Player p = event.getPlayer();
+        Individual individual = new Individual(p);
+        individual.setBCOnline(true);
+        individual.setServerName(BCUtil.getServerName());
         new BukkitRunnable(){
             @Override
             public void run() {
@@ -36,7 +41,7 @@ public class PlayerListener implements Listener{
         if(Config.JOIN_MSG){
             for(String name : new Individual(p.getName()).getFriendList()){
                 Individual friend = new Individual(name);
-                if(friend.isOnline()){
+                if(friend.isBCOnline()){
                    Util.sendHub(friend.asPlayer(), Message.JOIN_MSG.replaceAll("%player%",p.getName()));
                 };
             }
@@ -51,5 +56,10 @@ public class PlayerListener implements Listener{
             individual.getMailEditor().setItems(ItemStackUtil.toItemStackList(inv.getContents()));
             Bukkit.dispatchCommand((Player)event.getPlayer(),"tablet open maileditor.yml");
         }
+    }
+
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event){
+        new Individual(event.getPlayer()).setBCOnline(false);
     }
 }

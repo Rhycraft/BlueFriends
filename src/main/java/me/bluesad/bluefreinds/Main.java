@@ -38,6 +38,7 @@ public final class Main extends JavaPlugin {
         instance = this;
         saveResource("config.yml",false);
         saveResource("message.yml",false);
+        saveResource("bungeecord.yml",false);
         new File(getDataFolder(),"/gui").mkdirs();
         saveResource("gui/main.yml",false);
         saveResource("gui/query.yml",false);

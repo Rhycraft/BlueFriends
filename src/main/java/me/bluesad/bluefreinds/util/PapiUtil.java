@@ -21,7 +21,7 @@ public class PapiUtil {
                     Individual individual = new Individual(player);
                     MailEditor editor = individual.getMailEditor();
                     if(s.equals("online")){
-                        return individual.isOnline() ? Config.ONLINE_FORMAT : Config.OFFLINE_FORMAT;
+                        return individual.isBCOnline() ? Config.ONLINE_FORMAT : Config.OFFLINE_FORMAT;
                     }else if(s.equals("name")){
                         return individual.getName();
                     }else if(s.equals("realname")){
@@ -56,6 +56,8 @@ public class PapiUtil {
                         return String.valueOf(individual.getFriendList().size());
                     }else if(s.equals("messagelist")){
                         return String.valueOf(individual.getSystemMessageList().size());
+                    }else if(s.equalsIgnoreCase("server_name")){
+                        return individual.getServerName();
                     }
                     return s;
                 }

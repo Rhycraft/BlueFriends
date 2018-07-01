@@ -1,6 +1,7 @@
 package me.bluesad.bluefreinds.manager;
 
 import me.bluesad.bluefreinds.Blue;
+import me.bluesad.bluefreinds.bungeecord.BCUtil;
 import me.bluesad.bluefreinds.database.Table;
 import me.bluesad.bluefreinds.util.Util;
 import org.bukkit.OfflinePlayer;
@@ -20,6 +21,8 @@ public class Individual implements Comparable<Individual>{
         this.player = player;
         String name = player.getName();
         if(!table.existsKey(name)){
+            table.set(name+".online",true);
+            table.set(name+".servername",BCUtil.getServerName());
             table.set(name+".headurl",Config.ID_CARD_DEFAULT_HEAD_URL);
             table.set(name+".headborderurl",Config.ID_CARD_DEFAULT_HEAD_BORDER_URL);
             table.set(name+".signature",Config.ID_CARD_DEFAULT_SIGNATURE);
@@ -92,6 +95,10 @@ public class Individual implements Comparable<Individual>{
         return table.getString(getName()+".qq");
     }
 
+    public void setBCOnline(boolean online) {
+        table.set(getName()+".online",online);
+    }
+
     public void setQq(String qq) {
         table.set(getName()+".qq",qq);
     }
@@ -106,6 +113,10 @@ public class Individual implements Comparable<Individual>{
 
     public String getBirthday() {
         return table.getString(getName()+".birthday");
+    }
+
+    public void setServerName(String name) {
+        table.set(getName()+".servername",name);
     }
 
     public void setBirthday(String birthday) {
@@ -278,6 +289,14 @@ public class Individual implements Comparable<Individual>{
         return individualList;
     }
 
+    public boolean isBCOnline(){
+        return table.getBoolean(getName()+".online");
+    }
+
+    public String getServerName(){
+        return table.getString(getName()+".servername");
+    }
+
     public Player asPlayer(){
         if(player.isOnline()){
             return player.getPlayer();
@@ -295,7 +314,7 @@ public class Individual implements Comparable<Individual>{
      * */
     public String replace(String str){
         MailEditor editor = getMailEditor();
-        return str.replaceAll("%bf_online%",isOnline() ? Config.ONLINE_FORMAT: Config.OFFLINE_FORMAT)
+        return str.replaceAll("%bf_online%",isBCOnline() ? Config.ONLINE_FORMAT: Config.OFFLINE_FORMAT)
                 .replaceAll("%bf_name%",getName())
                 .replaceAll("%bf_realname%",getRealName())
                 .replaceAll("%bf_uuid%",getUniqueId().toString())
@@ -312,7 +331,8 @@ public class Individual implements Comparable<Individual>{
                 .replaceAll("%bf_maileditor_title%",editor.getTitle())
                 .replaceAll("%bf_maileditor_items%",String.valueOf(editor.getItems().size()))
                 .replaceAll("%bf_friendlist%",String.valueOf(getFriendList().size()))
-                .replaceAll("%bf_messagelist%",String.valueOf(getSystemMessageList().size()));
+                .replaceAll("%bf_messagelist%",String.valueOf(getSystemMessageList().size()))
+                .replaceAll("%bf_server_name%",getServerName());
     }
 }
 

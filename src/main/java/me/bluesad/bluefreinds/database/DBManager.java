@@ -38,7 +38,7 @@ public class DBManager {
                 DBUtil.createSchema(connection,schema);
                 connection.setCatalog(schema);
             }
-            DBUtil.createTable(connection,individualTable.getTableName(),"name","realname","sex","qq","email","birthday","address","signature","headborderurl","headurl","friendlist","maillist","requestlist","systemmessagelist","editor_to","editor_title","editor_content","editor_itemts","editor_systemmail","editor_items");
+            DBUtil.createTable(connection,individualTable.getTableName(),"online","servername","name","realname","sex","qq","email","birthday","address","signature","headborderurl","headurl","friendlist","maillist","requestlist","systemmessagelist","editor_to","editor_title","editor_content","editor_itemts","editor_systemmail","editor_items");
             DBUtil.createTable(connection,mailTable.getTableName(),"title","from_","to_","content","date","uuid","items","read");
         } catch (SQLException e){
             System.err.println(ERROR_MESSAGE);

@@ -1,10 +1,14 @@
 package me.bluesad.bluefreinds.util;
 
+import com.google.common.io.ByteArrayDataOutput;
+import com.google.common.io.ByteStreams;
 import lk.vexview.api.VexViewAPI;
 import lk.vexview.hud.VexImageShow;
 import lk.vexview.hud.VexTextShow;
 import me.bluesad.bluefreinds.Blue;
 import me.bluesad.bluefreinds.Main;
+import me.bluesad.bluefreinds.bungeecord.BCCommands;
+import me.bluesad.bluefreinds.bungeecord.BCUtil;
 import me.bluesad.bluefreinds.manager.Config;
 import me.bluesad.bluefreinds.manager.Individual;
 import me.clip.placeholderapi.PlaceholderAPI;
@@ -66,19 +70,30 @@ public class Util {
         return set;
     }
 
-    public static void sendHub(Player p, String... message) {
-        String url = Config.HUB_URL;
-        int x = Config.HUB_X;
-        int y = Config.HUB_Y;
-        int w = Config.HUB_W;
-        int h = Config.HUB_H;
-        int cx = Config.HUB_CONTENTS_X;
-        int cy = Config.HUB_CONTENTS_Y;
-        int time = Config.HUB_TIME;
-        VexTextShow textShow = new VexTextShow(0, cx, cy, asList(message), time);
-        VexImageShow imageShow = new VexImageShow(0, url, x, y, w, h, w, h, time);
-        VexViewAPI.sendHUD(p, textShow);
-        VexViewAPI.sendHUD(p, imageShow);
+    public static void sendHub(OfflinePlayer p, String... message) {
+        if(p.isOnline()) {
+            String url = Config.HUB_URL;
+            int x = Config.HUB_X;
+            int y = Config.HUB_Y;
+            int w = Config.HUB_W;
+            int h = Config.HUB_H;
+            int cx = Config.HUB_CONTENTS_X;
+            int cy = Config.HUB_CONTENTS_Y;
+            int time = Config.HUB_TIME;
+            VexTextShow textShow = new VexTextShow(0, cx, cy, asList(message), time);
+            VexImageShow imageShow = new VexImageShow(0, url, x, y, w, h, w, h, time);
+            VexViewAPI.sendHUD(p.getPlayer(), textShow);
+            VexViewAPI.sendHUD(p.getPlayer(), imageShow);
+        }else if(BCUtil.isBungeeCord()){
+            ByteArrayDataOutput out = ByteStreams.newDataOutput();
+            for (String arg : message){
+                out.writeUTF(" "+arg);
+            }
+            out.writeUTF("BlueFriends");
+            out.writeUTF(String.valueOf(message.length+1));
+            out.writeUTF(BCCommands.SEND_HUB);
+            Bukkit.getServer().sendPluginMessage(Main.getInstance(),"BungeeCord",out.toByteArray());
+        }
     }
     /**
      * @name 玩家名
