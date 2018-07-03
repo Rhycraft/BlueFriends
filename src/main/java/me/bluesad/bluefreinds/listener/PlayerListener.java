@@ -1,9 +1,7 @@
 package me.bluesad.bluefreinds.listener;
 
-import com.mysql.fabric.xmlrpc.base.Array;
-import me.bluesad.bluefreinds.Blue;
 import me.bluesad.bluefreinds.Main;
-import me.bluesad.bluefreinds.bungeecord.BCUtil;
+import me.bluesad.bluefreinds.bungeecord.BungeeCord;
 import me.bluesad.bluefreinds.manager.Config;
 import me.bluesad.bluefreinds.manager.Individual;
 import me.bluesad.bluefreinds.manager.Message;
@@ -18,8 +16,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.scheduler.BukkitRunnable;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * @author bluesad
@@ -29,11 +25,11 @@ public class PlayerListener implements Listener{
     public void onJoin(PlayerJoinEvent event){
         Player p = event.getPlayer();
         Individual individual = new Individual(p);
-        individual.setBCOnline(true);
-        individual.setServerName(BCUtil.getServerName());
+        individual.setServerName(BungeeCord.SERVER_NAME);
         new BukkitRunnable(){
             @Override
             public void run() {
+                individual.setBCOnline(true);
                 Util.sendHub(p, Message.ON_JOIN.
                         replaceAll("%c%",String.valueOf(new Individual(p.getName()).getSystemMessageList().size())));
             }

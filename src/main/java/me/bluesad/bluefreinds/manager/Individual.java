@@ -1,7 +1,7 @@
 package me.bluesad.bluefreinds.manager;
 
 import me.bluesad.bluefreinds.Blue;
-import me.bluesad.bluefreinds.bungeecord.BCUtil;
+import me.bluesad.bluefreinds.bungeecord.BungeeCord;
 import me.bluesad.bluefreinds.database.Table;
 import me.bluesad.bluefreinds.util.Util;
 import org.bukkit.OfflinePlayer;
@@ -22,7 +22,7 @@ public class Individual implements Comparable<Individual>{
         String name = player.getName();
         if(!table.existsKey(name)){
             table.set(name+".online",true);
-            table.set(name+".servername",BCUtil.getServerName());
+            table.set(name+".servername",BungeeCord.SERVER_NAME);
             table.set(name+".headurl",Config.ID_CARD_DEFAULT_HEAD_URL);
             table.set(name+".headborderurl",Config.ID_CARD_DEFAULT_HEAD_BORDER_URL);
             table.set(name+".signature",Config.ID_CARD_DEFAULT_SIGNATURE);

@@ -108,3 +108,5 @@ join_msg: '&6[BlueFriends]&a你的好友&e%player%&a已上线.'
 unexists_gui: '&6[BlueFriends]&c该界面不存在.'
 #变量%url%
 illegal_image_url: '&6[BlueFriends]&c你输入了一个非法的图片地址&c(%url%)&c,请检查你的输入!'
+illegal_encoding: '错误:%encoding%不是一个合法的字符集.'
+error_load_packet_from_json: '错误:无法从%json%中读取数据包.'

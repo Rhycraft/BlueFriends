@@ -1,0 +1,4 @@
+name: BlueFriendsProxy
+main: 'me.bluesad.bluefreinds.bungeecord.proxy.BlueFriendsProxy'
+version: 1.0
+author: bluesadi

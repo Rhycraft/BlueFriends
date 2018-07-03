@@ -2,19 +2,18 @@ package me.bluesad.bluefreinds.util;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+import com.google.gson.Gson;
 import lk.vexview.api.VexViewAPI;
 import lk.vexview.hud.VexImageShow;
 import lk.vexview.hud.VexTextShow;
 import me.bluesad.bluefreinds.Blue;
 import me.bluesad.bluefreinds.Main;
 import me.bluesad.bluefreinds.bungeecord.BCCommands;
-import me.bluesad.bluefreinds.bungeecord.BCUtil;
+import me.bluesad.bluefreinds.bungeecord.BungeeCord;
+import me.bluesad.bluefreinds.bungeecord.BungeeCordPacket;
 import me.bluesad.bluefreinds.manager.Config;
-import me.bluesad.bluefreinds.manager.Individual;
-import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.InputStream;
@@ -30,6 +29,7 @@ import java.util.*;
 public class Util {
 
     private static final Date date = new Date();
+    private static final Gson DEFAULT_GSON = new Gson();
     /**
      * 获取当前日期
      * */
@@ -84,15 +84,9 @@ public class Util {
             VexImageShow imageShow = new VexImageShow(0, url, x, y, w, h, w, h, time);
             VexViewAPI.sendHUD(p.getPlayer(), textShow);
             VexViewAPI.sendHUD(p.getPlayer(), imageShow);
-        }else if(BCUtil.isBungeeCord()){
-            ByteArrayDataOutput out = ByteStreams.newDataOutput();
-            for (String arg : message){
-                out.writeUTF(" "+arg);
-            }
-            out.writeUTF("BlueFriends");
-            out.writeUTF(String.valueOf(message.length+1));
-            out.writeUTF(BCCommands.SEND_HUB);
-            Bukkit.getServer().sendPluginMessage(Main.getInstance(),"BungeeCord",out.toByteArray());
+        }else if(BungeeCord.BUNGEE_CORD){
+            Bukkit.getOnlinePlayers().iterator().next().sendPluginMessage(Main.getInstance(),BungeeCord.CHANNEL,
+                    new BungeeCordPacket(BungeeCord.SECRET_KEY,p.getName(),BCCommands.SEND_HUB,message).toBytes());
         }
     }
     /**
@@ -152,6 +146,10 @@ public class Util {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public static Gson defaultGson(){
+        return DEFAULT_GSON;
     }
 
 }

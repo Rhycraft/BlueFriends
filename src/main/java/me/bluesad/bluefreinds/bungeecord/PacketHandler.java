@@ -1,25 +1,16 @@
 package me.bluesad.bluefreinds.bungeecord;
 
 import me.bluesad.bluefreinds.util.Util;
-import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import java.util.Arrays;
 
 public class PacketHandler {
-    static void handle(String[] args){
-        if(args[0].equalsIgnoreCase(BCCommands.SEND_HUB)){
-            OfflinePlayer off = Bukkit.getOfflinePlayer(args[1]);
-            if(off.isOnline()){
-                Player player = off.getPlayer();
-                Util.sendHub(player, Arrays.copyOfRange(args,1,args.length));
-            }
+    static void handle(Player target,BungeeCordPacket packet){
+        String label = packet.getLabel();
+        String[] args = packet.getArguments();
+        if(label.equalsIgnoreCase(BCCommands.SEND_HUB)){
+            Util.sendHub(target, args);
         }else if(args[0].equalsIgnoreCase(BCCommands.SEND_MESSAGE)){
-            OfflinePlayer off = Bukkit.getOfflinePlayer(args[1]);
-            if(off.isOnline()){
-                Player player = off.getPlayer();
-                player.sendMessage(Arrays.copyOfRange(args,1,args.length));
-            }
+            target.sendMessage(args);
         }
     }
 }

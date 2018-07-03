@@ -18,6 +18,8 @@ public class Lang {
     public static String RELOAD_COMPLETED = lang.getString("reload_completed","§6[BlueFriends]§a插件重载完毕!");
     public static String MAIL_GROUP_SEND_COMPLETED = lang.getString("mail_group_send_completed","§6[BlueFriends]§a群发邮件成功!");
     public static String WARN_NO_PERMISSION = lang.getString("warn_no_permission","§6[BlueFriends]§c你没有权限执行这个指令,需要:§e%permission%!");
+    public static String ILLEGAL_ENCODING = lang.getString("illegal_encoding","%encoding%不是一个合法的字符集.");
+    public static String ERROR_LOAD_PACKET_FROM_JSON = lang.getString("error_load_packet_from_json","错误:无法从%json%中读取数据包.");
 
     public static void reload(){
         lang = new YMLConfiguration(new File(Main.getInstance().getDataFolder(),"lang/"+Config.LANGUAGE+".yml"));
@@ -31,5 +33,7 @@ public class Lang {
         RELOAD_COMPLETED = lang.getString("reload_completed","§6[BlueFriends]§a插件重载完毕!");
         MAIL_GROUP_SEND_COMPLETED = lang.getString("mail_group_send_completed","§6[BlueFriends]§a群发邮件成功!");
         WARN_NO_PERMISSION = lang.getString("warn_no_permission","§6[BlueFriends]§c你没有权限执行这个指令!");
+        ILLEGAL_ENCODING = lang.getString("illegal_encoding","%encoding%不是一个合法的字符集.");
+        ERROR_LOAD_PACKET_FROM_JSON = lang.getString("error_load_packet_from_json","错误:无法从%json%中读取数据包.");
     }
 }
